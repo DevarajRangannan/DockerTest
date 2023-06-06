@@ -8,6 +8,10 @@ COPY . .
 
 RUN npm install
 
+RUN npm run build
+
+RUN serve -s build
+
 ENV PORT=3000
 ENV NODE_ENV=production
 
