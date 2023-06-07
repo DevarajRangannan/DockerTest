@@ -2,19 +2,14 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package*.json /
+COPY package.json /
 
 COPY . .
 
-RUN npm install
+RUN npm install && npm install -g serve && npm run build 
 
-RUN npm run build
-
-RUN serve -s build
-
-ENV PORT=3000
-ENV NODE_ENV=production
+ENV PORT=8080
 
 EXPOSE $PORT
 
-CMD ["npm", "start"]
+CMD ["serve", "-s", "build"]
