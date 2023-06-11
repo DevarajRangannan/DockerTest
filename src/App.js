@@ -9,8 +9,6 @@ function App() {
         <p>
           Devaraj Ranganan
         </p>
-          Learn React
-        </a>
       </header>
     </div>
   );
